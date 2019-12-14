@@ -26,6 +26,7 @@ TagManager:
   - TitleManager
   - Button
   - ScenarioManager
+  - DamageText
   layers:
   - Default
   - TransparentFX

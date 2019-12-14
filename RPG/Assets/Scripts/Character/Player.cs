@@ -74,7 +74,6 @@ public class Player : MonoBehaviour
         x = enemy.transform.position.x + 2;
         enemy.hp = enemy.hp - atk;
         mt.AttackText();
-
         if (sag <= 1)
         {
             isSag = true;
