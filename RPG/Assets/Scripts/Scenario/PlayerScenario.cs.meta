@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 69e630818fe1ddb4b8d3f069529c46f9
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - grad: {instanceID: 0}
+  - angry: {fileID: 3694947732478204850, guid: 068571fa4f406ea4bb32b4c102586987, type: 3}
+  - sad: {instanceID: 0}
+  - happy: {instanceID: 0}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
