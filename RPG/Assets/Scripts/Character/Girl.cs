@@ -16,8 +16,7 @@ public class Girl : MonoBehaviour
     float roteX, roteZ;
     float MaxX;
 
-    SpriteRenderer sr;
-    float r, g, b, a;
+    SpriteScript ss;
 
 
     public Player player;
@@ -34,15 +33,13 @@ public class Girl : MonoBehaviour
     {
         player = GameObject.FindWithTag("Player").GetComponent<Player>();
         mt = GameObject.FindWithTag("MessageText").GetComponent<MessageText>();
-        sr = GetComponent<SpriteRenderer>();
+
+        ss = GetComponent<SpriteScript>();
+
         transform.position = new Vector2(posX, posY);
         Maxhp = hp;
         MaxX = posX;
-
-        r = sr.color.r;
-        g = sr.color.g;
-        b = sr.color.b;
-        a = sr.color.a;
+        
     }
 
     // Update is called once per frame
@@ -51,6 +48,7 @@ public class Girl : MonoBehaviour
         transform.position = new Vector2(posX, posY);
         transform.rotation = Quaternion.Euler(roteX, 0, roteZ);
         sum = posX - player.transform.position.x;
+        Color();
 
         if (sum == 0.5f)
         {
@@ -65,7 +63,6 @@ public class Girl : MonoBehaviour
         {
             posX = MaxX;
         }
-        Color();
     }
 
     public void Turn()
@@ -207,17 +204,12 @@ public class Girl : MonoBehaviour
     {
         if (isRink)
         {
-            r = 0.4f;
-            g = 1;
-            b = 0;
+            ss.RinkColor();
         }
         else
         {
-            r = 1;
-            g = 1;
-            b = 1;
+            ss.Default();
         }
-        sr.color = new Color(r, g, b, 1);
     }
 
     void Rote()

@@ -14,7 +14,7 @@ public class TitleManager : MonoBehaviour
     void Start()
     {
         scene = GetComponent<Scene>();
-        tb = GameObject.FindWithTag("Button").GetComponent<TitleButton>();
+        tb = GameObject.Find("Canvas").GetComponent<TitleButton>();
         //fade = GameObject.FindWithTag("Fade").GetComponent<Fade>();
     }
 
@@ -28,7 +28,7 @@ public class TitleManager : MonoBehaviour
             fade.alpha = 0.0f;
         }*/
 
-        if (tb.isStart || tb.isExit)
+        if (tb.isTutorial || tb.isStart || tb.isExit)
         {
             Scene();
         }
@@ -44,6 +44,11 @@ public class TitleManager : MonoBehaviour
         if (tb.isExit)
         {
             scene.Exit();
+        }
+
+        if (tb.isTutorial)
+        {
+            scene.Tutorial();
         }
     }
 

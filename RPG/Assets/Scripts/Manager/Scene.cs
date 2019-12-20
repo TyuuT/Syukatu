@@ -5,7 +5,6 @@ using UnityEngine.SceneManagement;
 
 public class Scene : MonoBehaviour
 {
-
     void Awake()
     {
         Screen.SetResolution(1024, 768, false, 60);
@@ -15,7 +14,19 @@ public class Scene : MonoBehaviour
     void Start() { }
 
     // Update is called once per frame
-    void Update() { }
+    void Update()
+    {
+        //隠しコマンドでも入れるか･･･
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            SceneManager.LoadScene("Title");
+        }
+    }
+
+    public void Tutorial()
+    {
+        SceneManager.LoadScene("Tutorial");
+    }
 
     public void Scenario1()
     {

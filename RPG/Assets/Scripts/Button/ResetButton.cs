@@ -3,16 +3,20 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class TitleButton : MonoBehaviour
+public class ResetButton : MonoBehaviour
 {
-    Button button;
-    public bool isStart = false;
+    Button restart;
+    Button exit;
+
+    public bool isRestart = false;
     public bool isExit = false;
 
     // Start is called before the first frame update
     void Start()
     {
-        button = GameObject.FindWithTag("Button").GetComponent<Button>();
+        restart = GameObject.FindWithTag("Reset").GetComponent<Button>();
+        exit = GameObject.FindWithTag("Exit").GetComponent<Button>();
+        
     }
 
     // Update is called once per frame
@@ -21,12 +25,12 @@ public class TitleButton : MonoBehaviour
 
     }
 
-    public void OnStart()
+    public void Restart()
     {
-        isStart = true;
+        isRestart = true;
     }
 
-    public void OnExit()
+    public void Exit()
     {
         isExit = true;
     }

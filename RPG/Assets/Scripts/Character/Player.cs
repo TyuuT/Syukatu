@@ -15,8 +15,7 @@ public class Player : MonoBehaviour
     int sag;
 
     //描画
-    SpriteRenderer sr;
-    float r, g, b, a;
+    SpriteScript ss;
 
     public Girl girl;
     public Enemy1 enemy;
@@ -34,11 +33,8 @@ public class Player : MonoBehaviour
         girl = GameObject.FindWithTag("Girl").GetComponent<Girl>();
         enemy = GameObject.FindWithTag("Enemy1").GetComponent<Enemy1>();
         mt = GameObject.FindWithTag("MessageText").GetComponent<MessageText>();
-        sr = GetComponent<SpriteRenderer>();
-        r = sr.color.r;
-        g = sr.color.g;
-        b = sr.color.b;
-        a = sr.color.a;
+
+        ss = GetComponent<SpriteScript>();
 
         Maxhp = hp;
         x = -1;
@@ -141,16 +137,11 @@ public class Player : MonoBehaviour
     {
         if (girl.isRink)
         {
-            r = 0.4f;
-            g = 1;
-            b = 0;
+            ss.RinkColor();
         }
         else
         {
-            r = 1;
-            g = 1;
-            b = 1;
+            ss.Default();
         }
-        sr.color = new Color(r, g, b, a);
     }
 }
